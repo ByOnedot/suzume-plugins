@@ -1,43 +1,45 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Space, Upload } from '@arco-design/web-react';
-import { IconUser } from '@arco-design/web-react/icon';
+import { Button, Space, Upload } from '@byonedot/web-react';
+import { IconUser } from '@byonedot/web-react/icon';
 import ky from 'ky';
 
 function App() {
-  const [usingWoff, setUsingWoff] = useState('loading');
+  const [cssStatus, setCssStatus] = useState('loading');
   useEffect(() => {
     ky('/main.css')
       .text()
       .then((content) => {
-        const matched = content.match(/url\(.*?nunito_for_arco.*?\)/);
-        if (matched) {
-          setUsingWoff(matched[0]);
-        } else {
-          setUsingWoff('EMPTY');
-        }
-      });
+        const hasSuzumeClasses = /\.suzume-/.test(content);
+        const hasFontFace = /@font-face/.test(content);
+        setCssStatus(
+          `classes=${hasSuzumeClasses ? 'ok' : 'MISSING'} font-face=${
+            hasFontFace ? 'present (removeFontFace is off)' : 'removed (removeFontFace: true)'
+          }`
+        );
+      })
+      .catch(() => setCssStatus('FAILED to load /main.css'));
   });
   return (
     <div style={{ padding: 20 }}>
       <ol>
         <Space direction="vertical" size="large">
           <li>
-            <p>The color of button should be orange (theme: '@arco-themes/react-asuka'):</p>
+            <p>The button below should be rendered with Suzume Design styles:</p>
             <Button type="primary">Button</Button>
           </li>
           <li>
-            <p>The nunito font file should not exist (removeFontFace: true for &lt;= 2.23.0):</p>
-            <pre>{usingWoff}</pre>
+            <p>
+              The compiled CSS should contain <code>.suzume-*</code> selectors, and with
+              <code>removeFontFace: true</code> no <code>@font-face</code> rule should remain:
+            </p>
+            <pre>{cssStatus}</pre>
           </li>
           <li>
-            <p>This upload component should display Japanese (defaultLanguage: 'ja-JP'):</p>
+            <p>This upload component should display Japanese (defaultLanguage: &apos;ja-JP&apos;):</p>
             <Upload />
           </li>
           <li>
-            <p>
-              This icon should display the logo of Tiktok (iconBox:
-              '@arco-iconbox/react-partial-bits'):
-            </p>
+            <p>This icon should render through the on-demand icon pipeline:</p>
             <IconUser style={{ fontSize: 40 }} />
           </li>
         </Space>

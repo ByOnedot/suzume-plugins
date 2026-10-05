@@ -2,7 +2,7 @@
 import type { LoaderContext as WebpackLoaderContext } from 'webpack';
 import type { LoaderContext as RspackLoaderContext } from '@rspack/core';
 
-export interface ArcoDesignPluginOptions {
+export interface SuzumeDesignPluginOptions {
   style?: string | boolean;
   libraryDirectory?: string;
   iconBox?: string;

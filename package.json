@@ -1,36 +1,28 @@
 {
-  "name": "arco-plugins",
+  "name": "suzume-plugins",
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev:webpack-react": "yarn workspace example-webpack-react dev"
+    "dev:webpack-react": "yarn workspace example-webpack-react dev",
+    "build": "yarn workspaces foreach -A --include \"*@byonedot/*\" run build",
+    "check:branding": "node ./scripts/check-branding.js",
+    "check:links": "node ./scripts/check-links.js"
   },
   "workspaces": [
     "packages/*",
     "examples/*"
   ],
   "engines": {
-    "node": ">=12.0.0"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "packages/*/src/**/*.{ts,js}": [
-      "eslint",
-      "prettier --write"
-    ]
+    "node": ">=16.0.0"
   },
   "keywords": [
-    "arco",
-    "arco-design",
+    "suzume",
+    "suzume-design",
     "webpack",
     "vite",
     "plugin"
   ],
-  "author": "arco-design",
+  "author": "Suzume Design",
   "license": "MIT",
   "devDependencies": {
     "@types/babel__core": "^7.20.0",
@@ -44,6 +36,15 @@
     "husky": "^4.3.0",
     "lerna": "^3.22.1",
     "lint-staged": "^10.5.0",
-    "prettier": "^2.1.2"
+    "prettier": "^2.1.2",
+    "typescript": "^5.0.4"
+  },
+  "homepage": "https://byonedot.in",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ByOnedot/suzume-plugins.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ByOnedot/suzume-plugins/issues"
   }
 }

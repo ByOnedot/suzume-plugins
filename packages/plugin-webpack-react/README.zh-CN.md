@@ -1,17 +1,17 @@
-# @arco-plugins/webpack-react
+# @byonedot/plugin-webpack-react
 
-`@arco-plugins/webpack-react` 是协助处理 arco 使用问题的 webpack 插件。
+`@byonedot/plugin-webpack-react` 是协助处理 suzume 使用问题的 webpack 插件。
 
 ## 特性
 
 插件的功能如下：
 
-1. `样式按需加载`：为 babel-loader 添加 babel-plugin-import 实现样式的按需加载。*如果原先就有针对 arco-design/web-react 的 babel-plugin-import 将会被替换*。
+1. `样式按需加载`：为 babel-loader 添加 babel-plugin-import 实现样式的按需加载。*如果原先就有针对 suzume-design/web-react 的 babel-plugin-import 将会被替换*。
 2. `主题引入`：指定主题包名，插件会读取主题包的变量内容注入到 less-loader 的 modifyVars。
 3. `移除组件库自带的字体包`：指定 `removeFontFace` 为 `true` 可以去掉组件库自带的字体文件。
 4. `图标替换`：指定图标库的包名，插件会读取包内图标对组件库内用到的同名的图标进行替换。
 5. `替换默认语言`：组件库的默认导入的语言包是中文，这就决定了打包产物中一定会包含中文，如果不想要中文，就可以利用这个参数来将其替换为你需要的语言。
-6. `获取按需加载的babel插件配置`：按需加载的实现是通过往 babel 注入 babel-plugin-import 配置来实现，这些配置开放出来供大家取用，可通过 `(new ArcoWebpackPlugin()).pluginForImport().getBabelPlugins()` 获取。
+6. `获取按需加载的babel插件配置`：按需加载的实现是通过往 babel 注入 babel-plugin-import 配置来实现，这些配置开放出来供大家取用，可通过 `(new SuzumeWebpackPlugin()).pluginForImport().getBabelPlugins()` 获取。
 
 ## 安装
 
@@ -19,10 +19,10 @@
 
 ```shell
 # npm
-$ npm install -D @arco-plugins/webpack-react
+$ npm install -D @byonedot/plugin-webpack-react
 
 # yarn
-$ yarn add @arco-plugins/webpack-react
+$ yarn add @byonedot/plugin-webpack-react
 ```
 
 ## 用法
@@ -30,12 +30,12 @@ $ yarn add @arco-plugins/webpack-react
 使用方式是在 webpack config 文件中加入以下内容：
 
 ```js
-const ArcoWebpackPlugin = require('@arco-plugins/webpack-react');
+const SuzumeWebpackPlugin = require('@byonedot/plugin-webpack-react');
 
 // webpack config
 {
   plugins: [
-    new ArcoWebpackPlugin(options)
+    new SuzumeWebpackPlugin(options)
   ]
 }
 ```
@@ -52,7 +52,7 @@ const ArcoWebpackPlugin = require('@arco-plugins/webpack-react');
 |**`modifyVars`**|`{Object}`|`{}`|less 变量|
 |**`style`**|`{String\|Boolean}`|`true`| 样式引入方式|
 |**`removeFontFace`**|`{Boolean}`|`false`| 去掉组件库自带的字体文件 |
-|**`defaultLanguage`**|`{string}`|`-`| 替换默认的语言，[语言列表](https://arco.design/react/docs/i18n#%E6%94%AF%E6%8C%81%E7%9A%84%E8%AF%AD%E8%A8%80) |
+|**`defaultLanguage`**|`{string}`|`-`| 替换默认的语言，[语言列表](https://byonedot.in) |
 |**`webpackImplementation`**|`{webpack}`|`-`| 指定使用的 webpack 实例 |
 |**`varsInjectScope`**|`{(String\|RegExp)[]}`|`-`| less 变量（modifyVars 和主题包的变量）注入的范围 |
 |**`modifyBabelLoader`**|`{Boolean}`|`true`| 如果有 babel-loader 则添加 babel-plugin-import 插件，否则添加新的 loader |
@@ -62,13 +62,13 @@ const ArcoWebpackPlugin = require('@arco-plugins/webpack-react');
 `style: true` 将引入 less 文件
 
 ```js
-import '@arco-design/web-react/Affix/style'
+import '@byonedot/web-react/Affix/style'
 ```
 
 `style: 'css'` 将引入 css 文件
 
 ```js
-import '@arco-design/web-react/Affix/style/css'
+import '@byonedot/web-react/Affix/style/css'
 ```
 
 `style: false` 不引入样式

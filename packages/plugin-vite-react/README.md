@@ -1,4 +1,4 @@
-# @arco-plugins/vite-react
+# @byonedot/plugin-vite-react
 
 ## Feature
 
@@ -11,7 +11,7 @@
 ## Install
 
 ```bash
-npm i @arco-plugins/vite-react -D
+npm i @byonedot/plugin-vite-react -D
 ```
 
 ## Usage
@@ -19,19 +19,19 @@ npm i @arco-plugins/vite-react -D
 ```js
 // vite.config.js
 
-import { vitePluginForArco } from '@arco-plugins/vite-react'
+import { vitePluginForSuzume } from '@byonedot/plugin-vite-react'
 
 export default {
   ...
   plugins: [
-    vitePluginForArco(options),
+    vitePluginForSuzume(options),
   ],
 }
 ```
 
 ```tsx
 // react
-import { Button } from '@arco-design/web-react';
+import { Button } from '@byonedot/web-react';
 
 export default () => (
   <div>
@@ -58,13 +58,13 @@ The plugin supports the following parameters:
 `style: true` will import less file
 
 ```js
-import '@arco-design/web-react/Affix/style';
+import '@byonedot/web-react/Affix/style';
 ```
 
 `style: 'css'` will import css file
 
 ```js
-import '@arco-design/web-react/Affix/style/css';
+import '@byonedot/web-react/Affix/style/css';
 ```
 
 `style: false` will not import any style file

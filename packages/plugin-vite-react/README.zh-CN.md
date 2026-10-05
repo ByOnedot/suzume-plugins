@@ -1,4 +1,4 @@
-# @arco-plugins/vite-react
+# @byonedot/plugin-vite-react
 
 ## 特性
 
@@ -11,7 +11,7 @@
 ## 安装
 
 ```bash
-npm i @arco-plugins/vite-react -D
+npm i @byonedot/plugin-vite-react -D
 ```
 
 ## 用法
@@ -19,19 +19,19 @@ npm i @arco-plugins/vite-react -D
 ```js
 // vite.config.js
 
-import { vitePluginForArco } from '@arco-plugins/vite-react'
+import { vitePluginForSuzume } from '@byonedot/plugin-vite-react'
 
 export default {
   ...
   plugins: [
-    vitePluginForArco(options),
+    vitePluginForSuzume(options),
   ],
 }
 ```
 
 ```tsx
 // react
-import { Button } from '@arco-design/web-react';
+import { Button } from '@byonedot/web-react';
 
 export default () => (
   <div>
@@ -58,13 +58,13 @@ export default () => (
 `style: true` 将引入 less 文件
 
 ```js
-import '@arco-design/web-react/Affix/style';
+import '@byonedot/web-react/Affix/style';
 ```
 
 `style: 'css'` 将引入 css 文件
 
 ```js
-import '@arco-design/web-react/Affix/style/css';
+import '@byonedot/web-react/Affix/style/css';
 ```
 
 `style: false` 不引入样式

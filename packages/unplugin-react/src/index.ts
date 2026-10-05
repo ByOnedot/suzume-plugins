@@ -4,14 +4,14 @@ import { RemoveFontFacePlugin } from './plugins/remove-font-face';
 import { ReplaceDefaultLanguagePlugin } from './plugins/replace-default-language';
 import { ReplaceIconPlugin } from './plugins/replace-icon';
 import { ThemePlugin } from './plugins/theme';
-import { ArcoDesignPluginOptions } from './types';
+import { SuzumeDesignPluginOptions } from './types';
 
-export type { ArcoDesignPluginOptions };
+export type { SuzumeDesignPluginOptions };
 
-export class ArcoDesignPlugin {
-  options: ArcoDesignPluginOptions;
+export class SuzumeDesignPlugin {
+  options: SuzumeDesignPluginOptions;
 
-  constructor(options: Partial<ArcoDesignPluginOptions> = {}) {
+  constructor(options: Partial<SuzumeDesignPluginOptions> = {}) {
     this.options = {
       style: true,
       libraryDirectory: 'es',

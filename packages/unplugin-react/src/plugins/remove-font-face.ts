@@ -1,5 +1,5 @@
 import type { Compiler, RuleSetUseItem } from '@rspack/core';
-import { ARCO_DESIGN_COMPONENT_NAME } from '../config';
+import { SUZUME_DESIGN_COMPONENT_NAME } from '../config';
 import { compileGlob } from '../utils';
 
 export class RemoveFontFacePlugin {
@@ -9,7 +9,7 @@ export class RemoveFontFacePlugin {
       options: {},
     };
     compiler.options.module.rules.push({
-      test: compileGlob(`**/node_modules/${ARCO_DESIGN_COMPONENT_NAME}/{es,lib}/style/index.less`),
+      test: compileGlob(`**/node_modules/${SUZUME_DESIGN_COMPONENT_NAME}/{es,lib}/style/index.less`),
       type: undefined,
       use: [use],
     });

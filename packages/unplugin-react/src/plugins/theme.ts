@@ -1,15 +1,15 @@
-import { getFileSource } from '@arco-plugins/utils';
+import { getFileSource } from '@byonedot/plugin-utils';
 import type { Compiler, RuleSetUseItem } from '@rspack/core';
 import path from 'path';
-import { ARCO_DESIGN_COMPONENT_NAME } from '../config';
-import { ArcoDesignPluginOptions } from '../types';
+import { SUZUME_DESIGN_COMPONENT_NAME } from '../config';
+import { SuzumeDesignPluginOptions } from '../types';
 import { compileGlob } from '../utils';
 import { getThemeComponents } from '../utils/theme';
 
 export class ThemePlugin {
-  options: ArcoDesignPluginOptions;
+  options: SuzumeDesignPluginOptions;
 
-  constructor(options: ArcoDesignPluginOptions) {
+  constructor(options: SuzumeDesignPluginOptions) {
     this.options = options;
   }
 
@@ -22,12 +22,12 @@ export class ThemePlugin {
     if (!this.options.theme) return;
     this._addAppendLoader(
       compiler,
-      `**/node_modules/${ARCO_DESIGN_COMPONENT_NAME}/{es,lib}/style/index.less`,
+      `**/node_modules/${SUZUME_DESIGN_COMPONENT_NAME}/{es,lib}/style/index.less`,
       `${this.options.theme}/theme.less`
     );
     this._addAppendLoader(
       compiler,
-      `**/node_modules/${ARCO_DESIGN_COMPONENT_NAME}/{es,lib}/style/index.css`,
+      `**/node_modules/${SUZUME_DESIGN_COMPONENT_NAME}/{es,lib}/style/index.css`,
       `${this.options.theme}/theme.css`
     );
   }
@@ -38,12 +38,12 @@ export class ThemePlugin {
     componentList.forEach((name) => {
       this._addAppendLoader(
         compiler,
-        `**/node_modules/${ARCO_DESIGN_COMPONENT_NAME}/{es,lib}/${name}/style/index.less`,
+        `**/node_modules/${SUZUME_DESIGN_COMPONENT_NAME}/{es,lib}/${name}/style/index.less`,
         `${this.options.theme}/components/${name}/index.less`
       );
       this._addAppendLoader(
         compiler,
-        `**/node_modules/${ARCO_DESIGN_COMPONENT_NAME}/{es,lib}/${name}/style/index.css`,
+        `**/node_modules/${SUZUME_DESIGN_COMPONENT_NAME}/{es,lib}/${name}/style/index.css`,
         `${this.options.theme}/components/${name}/index.css`
       );
     });
@@ -63,7 +63,7 @@ export class ThemePlugin {
     const use: RuleSetUseItem = {
       loader: require.resolve('../loaders/append'),
       options: {
-        additionContent: source.replace(/!/g, '__ARCO_PLACEHOLDER__'),
+        additionContent: source.replace(/!/g, '__SUZUME_PLACEHOLDER__'),
       },
     };
     compiler.options.module.rules.push({

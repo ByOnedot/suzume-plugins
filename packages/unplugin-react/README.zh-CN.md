@@ -1,6 +1,6 @@
-# @arco-plugins/unplugin-react
+# @byonedot/plugin-unplugin-react
 
-`@arco-plugins/unplugin-react` 是协助处理 arco 使用问题的构建插件。
+`@byonedot/plugin-unplugin-react` 是协助处理 suzume 使用问题的构建插件。
 
 基于 unplugin 实现了跨 bundler 通用的构建能力支持。
 
@@ -34,10 +34,10 @@
 
 ### Rspack
 
-与 Rspack 集成使用时相比于 `@arco-plugins/webpack-react` 存在一些不同，这是由 Rspack 与 webpack 的底层差异决定的。
+与 Rspack 集成使用时相比于 `@byonedot/plugin-webpack-react` 存在一些不同，这是由 Rspack 与 webpack 的底层差异决定的。
 
 ```diff
-export interface ArcoDesignPluginOptions {
+export interface SuzumeDesignPluginOptions {
   style?: string | boolean;
   libraryDirectory?: string;
   iconBox?: string;
@@ -59,7 +59,7 @@ export interface ArcoDesignPluginOptions {
 
 另外由于放弃了对 webpack@4 的支持并对内部实现做了改进，所以不再需要配置 `context` `webpackImplementation`。
 
-出于可维护性的考虑，`@arco-plugins/unplugin-react` 不再支持 `modifyVars` `varsInjectScope` 配置项，你可以通过手动配置 `less-loader` 的配置来实现相同的功能。
+出于可维护性的考虑，`@byonedot/plugin-unplugin-react` 不再支持 `modifyVars` `varsInjectScope` 配置项，你可以通过手动配置 `less-loader` 的配置来实现相同的功能。
 
 ## 安装
 
@@ -67,13 +67,13 @@ export interface ArcoDesignPluginOptions {
 
 ```shell
 # npm
-$ npm install -D @arco-plugins/unplugin-react
+$ npm install -D @byonedot/plugin-unplugin-react
 
 # yarn
-$ yarn add -D @arco-plugins/unplugin-react
+$ yarn add -D @byonedot/plugin-unplugin-react
 
 # pnpm
-$ pnpm add -D @arco-plugins/unplugin-react
+$ pnpm add -D @byonedot/plugin-unplugin-react
 ```
 
 ## 用法
@@ -81,7 +81,7 @@ $ pnpm add -D @arco-plugins/unplugin-react
 以 Rspack 为例，使用方式是在 `rspack.config.js` 文件中加入以下内容：
 
 ```js
-const { ArcoDesignPlugin } = require('@arco-plugins/unplugin-react');
+const { SuzumeDesignPlugin } = require('@byonedot/plugin-unplugin-react');
 
 module.exports = {
   module: {
@@ -94,9 +94,9 @@ module.exports = {
     ],
   },
   plugins: [
-    new ArcoDesignPlugin({
-      theme: '@arco-themes/react-asuka',
-      iconBox: '@arco-iconbox/react-partial-bits',
+    new SuzumeDesignPlugin({
+      theme: '@suzume-themes/react-asuka',
+      iconBox: '@suzume-iconbox/react-partial-bits',
       removeFontFace: true,
     }),
   ],
@@ -116,4 +116,4 @@ module.exports = {
 |**`libraryDirectory`**|`{'es'\|'lib'}`|`'es'`|导出格式|
 |**`style`**|`{String\|Boolean}`|`true`| 样式引入方式|
 |**`removeFontFace`**|`{Boolean}`|`false`| 去掉组件库自带的字体文件 |
-|**`defaultLanguage`**|`{string}`|`-`| 替换默认的语言，[语言列表](https://arco.design/react/docs/i18n#%E6%94%AF%E6%8C%81%E7%9A%84%E8%AF%AD%E8%A8%80) |
+|**`defaultLanguage`**|`{string}`|`-`| 替换默认的语言，[语言列表](https://byonedot.in) |

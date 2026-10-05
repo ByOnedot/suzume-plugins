@@ -1,5 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ArcoWebpackPlugin = require('@arco-plugins/webpack-react');
+const SuzumeWebpackPlugin = require('@byonedot/plugin-webpack-react');
 const webpack = require('webpack');
 
 module.exports = {
@@ -46,10 +46,9 @@ module.exports = {
       template: 'public/index.html',
       inject: 'body',
     }),
-    new ArcoWebpackPlugin({
+    new SuzumeWebpackPlugin({
       include: ['src', /\/components\//, '../component-a'],
       webpackImplementation: webpack,
-      theme: '@arco-themes/react-plugin-test',
     }),
   ],
 };

@@ -1,8 +1,8 @@
-import { ArcoDesignPlugin } from './arco-design-plugin';
-import type { ArcoDesignPluginOptions } from './arco-design-plugin/interface';
+import { SuzumeDesignPlugin } from './suzume-design-plugin';
+import type { SuzumeDesignPluginOptions } from './suzume-design-plugin/interface';
 
-export type { ArcoDesignPluginOptions };
-export default ArcoDesignPlugin;
+export type { SuzumeDesignPluginOptions };
+export default SuzumeDesignPlugin;
 
-module.exports = ArcoDesignPlugin;
-module.exports.default = ArcoDesignPlugin;
+module.exports = SuzumeDesignPlugin;
+module.exports.default = SuzumeDesignPlugin;

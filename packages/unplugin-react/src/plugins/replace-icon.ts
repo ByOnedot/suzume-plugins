@@ -1,12 +1,12 @@
 import path from 'path';
 import type { Compiler, RuleSetUseItem } from '@rspack/core';
 import { compileGlob } from '../utils';
-import { ArcoDesignPluginOptions } from '../types';
+import { SuzumeDesignPluginOptions } from '../types';
 
 export class ReplaceIconPlugin {
-  options: ArcoDesignPluginOptions;
+  options: SuzumeDesignPluginOptions;
 
-  constructor(options: ArcoDesignPluginOptions) {
+  constructor(options: SuzumeDesignPluginOptions) {
     this.options = options;
   }
 
@@ -32,7 +32,7 @@ export class ReplaceIconPlugin {
       },
     };
     compiler.options.module.rules.unshift({
-      test: compileGlob('**/node_modules/@arco-design/web-react/icon/react-icon/*/index.js'),
+      test: compileGlob('**/node_modules/@byonedot/web-react/icon/react-icon/*/index.js'),
       use: [use],
     });
   }

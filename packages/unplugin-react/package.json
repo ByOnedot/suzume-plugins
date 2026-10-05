@@ -1,36 +1,32 @@
 {
-  "name": "@arco-plugins/unplugin-react",
-  "version": "1.0.1",
-  "description": "arco plugin",
+  "name": "@byonedot/plugin-unplugin-react",
+  "version": "1.0.0",
+  "description": "suzume plugin",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "files": [
     "lib"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:arco-design/arco-plugins.git",
-    "directory": "packages/plugin-unplugin-react"
-  },
   "scripts": {
     "build": "rm -rf lib && tsc",
     "dev": "tsc -w --sourceMap",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "check:branding": "node ../../scripts/check-branding.js"
   },
   "keywords": [
-    "arco",
-    "arco-design",
-    "arco-plugin",
+    "suzume",
+    "suzume-design",
+    "suzume-plugin",
     "plugin",
     "webpack",
     "rspack",
     "unplugin"
   ],
-  "author": "arco-design",
+  "author": "Suzume Design",
   "license": "MIT",
   "dependencies": {
-    "@arco-plugins/utils": "^1.2.1",
     "@babel/core": "7.21.4",
+    "@byonedot/plugin-utils": "^1.0.0",
     "minimatch": "^9.0.0"
   },
   "devDependencies": {
@@ -40,5 +36,17 @@
   },
   "peerDependencies": {
     "@rspack/core": "*"
+  },
+  "homepage": "https://byonedot.in",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ByOnedot/suzume-plugins.git",
+    "directory": "packages/unplugin-react"
+  },
+  "bugs": {
+    "url": "https://github.com/ByOnedot/suzume-plugins/issues"
   }
 }

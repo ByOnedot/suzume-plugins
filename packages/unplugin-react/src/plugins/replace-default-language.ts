@@ -1,12 +1,12 @@
 import type { Compiler, RuleSetUseItem } from '@rspack/core';
-import { ARCO_DESIGN_COMPONENT_NAME } from '../config';
+import { SUZUME_DESIGN_COMPONENT_NAME } from '../config';
 import { compileGlob } from '../utils';
-import { ArcoDesignPluginOptions } from '../types';
+import { SuzumeDesignPluginOptions } from '../types';
 
 export class ReplaceDefaultLanguagePlugin {
-  options: ArcoDesignPluginOptions;
+  options: SuzumeDesignPluginOptions;
 
-  constructor(options: ArcoDesignPluginOptions) {
+  constructor(options: SuzumeDesignPluginOptions) {
     this.options = options;
   }
 
@@ -21,7 +21,7 @@ export class ReplaceDefaultLanguagePlugin {
       };
       compiler.options.module.rules.push({
         test: compileGlob(
-          `**/node_modules/${ARCO_DESIGN_COMPONENT_NAME}/${type}/locale/default.js`
+          `**/node_modules/${SUZUME_DESIGN_COMPONENT_NAME}/${type}/locale/default.js`
         ),
         type: undefined,
         use: [use],

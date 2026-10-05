@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Enable Corepack (Yarn 4 via .yarnrc.yml)
+        run: corepack enable
+
+      - name: Install
+        run: YARN_CHECKSUM_BEHAVIOR=update yarn install
+
+      - name: Branding regression scan
+        run: yarn check:branding
+
+      - name: Build all publishable packages
+        run: yarn build
+
+      - name: Branding regression scan (build output)
+        run: |
+          for d in packages/utils packages/plugin-webpack-react packages/unplugin-react packages/plugin-vite-react; do
+            node ./scripts/check-branding.js "$d/lib"
+          done

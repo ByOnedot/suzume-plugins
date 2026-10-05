@@ -1,5 +1,5 @@
 import React from 'react';
-import { Breadcrumb } from '@arco-design/web-react';
+import { Breadcrumb } from '@byonedot/web-react';
 
 export function MimeComponent() {
   return (

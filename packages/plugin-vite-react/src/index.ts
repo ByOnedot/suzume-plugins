@@ -1,5 +1,5 @@
-import vitePluginForArco from './arco-design-plugin';
+import vitePluginForSuzume from './suzume-design-plugin';
 
-export default vitePluginForArco;
+export default vitePluginForSuzume;
 
-export { vitePluginForArco };
+export { vitePluginForSuzume };

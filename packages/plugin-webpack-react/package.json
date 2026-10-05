@@ -1,38 +1,34 @@
 {
-  "name": "@arco-plugins/webpack-react",
-  "version": "1.4.9-beta.2",
-  "description": "arco webpack plugin",
+  "name": "@byonedot/plugin-webpack-react",
+  "version": "1.0.0",
+  "description": "suzume webpack plugin",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "files": [
     "lib"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:arco-design/arco-plugins.git",
-    "directory": "packages/plugin-webpack-react"
-  },
   "scripts": {
     "build": "rm -rf lib && tsc",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "check:branding": "node ../../scripts/check-branding.js"
   },
   "keywords": [
-    "arco",
-    "arco-design",
-    "arco-plugin",
+    "suzume",
+    "suzume-design",
+    "suzume-plugin",
     "plugin",
     "webpack"
   ],
-  "author": "arco-design",
+  "author": "Suzume Design",
   "license": "MIT",
   "dependencies": {
-    "@arco-plugins/utils": "^1.2.1",
     "@babel/core": "^7.16.0",
     "@babel/generator": "^7.16.0",
     "@babel/parser": "^7.16.4",
     "@babel/preset-react": "^7.16.0",
     "@babel/preset-typescript": "^7.16.0",
     "@babel/traverse": "^7.16.3",
+    "@byonedot/plugin-utils": "^1.0.0",
     "babel-plugin-import": "^1.13.3",
     "chalk": "^4.1.0",
     "loader-utils": "^2.0.2",
@@ -47,5 +43,17 @@
   },
   "peerDependencies": {
     "webpack": "^4.0.0 || ^5.0.0"
+  },
+  "homepage": "https://byonedot.in",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ByOnedot/suzume-plugins.git",
+    "directory": "packages/plugin-webpack-react"
+  },
+  "bugs": {
+    "url": "https://github.com/ByOnedot/suzume-plugins/issues"
   }
 }

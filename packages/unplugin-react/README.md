@@ -1,6 +1,6 @@
-# @arco-plugins/unplugin-react
+# @byonedot/plugin-unplugin-react
 
-`@arco-plugins/unplugin-react` is a build plugin that helps with arco problems.
+`@byonedot/plugin-unplugin-react` is a build plugin that helps with suzume problems.
 
 It implements cross-bundler build capabilities based on unplugin.
 
@@ -34,10 +34,10 @@ The features of the plugin are as follows:
 
 ### Rspack
 
-Compared to `@arco-plugins/webpack-react`, there are some differences when using it in conjunction with Rspack. This is due to the underlying differences between Rspack and webpack.
+Compared to `@byonedot/plugin-webpack-react`, there are some differences when using it in conjunction with Rspack. This is due to the underlying differences between Rspack and webpack.
 
 ```diff
-export interface ArcoDesignPluginOptions {
+export interface SuzumeDesignPluginOptions {
   style?: string | boolean;
   libraryDirectory?: string;
   iconBox?: string;
@@ -59,7 +59,7 @@ Unlike webpack, Rspack no longer uses Babel for limited-range code conversion, b
 
 In addition, because support for webpack@4 has been abandoned and internal implementation has been improved, `context` and `webpackImplementation` configuration is no longer required.
 
-For maintainability reasons, `@arco-plugins/unplugin-react` no longer supports the `modifyVars` and `varsInjectScope` configuration items. You can achieve the same function by manually configuring the `less-loader`.
+For maintainability reasons, `@byonedot/plugin-unplugin-react` no longer supports the `modifyVars` and `varsInjectScope` configuration items. You can achieve the same function by manually configuring the `less-loader`.
 
 ## Install
 
@@ -67,13 +67,13 @@ Install this tool via package manager:
 
 ```shell
 # npm
-$ npm install -D @arco-plugins/unplugin-react
+$ npm install -D @byonedot/plugin-unplugin-react
 
 # yarn
-$ yarn add -D @arco-plugins/unplugin-react
+$ yarn add -D @byonedot/plugin-unplugin-react
 
 # pnpm
-$ pnpm add -D @arco-plugins/unplugin-react
+$ pnpm add -D @byonedot/plugin-unplugin-react
 ```
 
 ## Usage
@@ -81,7 +81,7 @@ $ pnpm add -D @arco-plugins/unplugin-react
 Take Rspack for example, the usage is to add the following content to the `rspack.config.js` file:
 
 ```js
-const { ArcoDesignPlugin } = require('@arco-plugins/unplugin-react');
+const { SuzumeDesignPlugin } = require('@byonedot/plugin-unplugin-react');
 
 module.exports = {
   module: {
@@ -94,9 +94,9 @@ module.exports = {
     ],
   },
   plugins: [
-    new ArcoDesignPlugin({
-      theme: '@arco-themes/react-asuka',
-      iconBox: '@arco-iconbox/react-partial-bits',
+    new SuzumeDesignPlugin({
+      theme: '@suzume-themes/react-asuka',
+      iconBox: '@suzume-iconbox/react-partial-bits',
       removeFontFace: true,
     }),
   ],
@@ -116,4 +116,4 @@ The plugin supports the following parameters:
 |**`libraryDirectory`**|`{'es'\|'lib'}`|`'es'`|Export format|
 |**`style`**|`{string\|boolean}`|`true`|Style import method|
 |**`removeFontFace`**|`{boolean}`|`false`|Removes the font file included in the component library|
-|**`defaultLanguage`**|`{string}`|`-`|Replace default language, [language list](https://arco.design/react/docs/i18n#%E6%94%AF%E6%8C%81%E7%9A%84%E8%AF%AD%E8%A8%80)|
+|**`defaultLanguage`**|`{string}`|`-`|Replace default language, [language list](https://byonedot.in)|

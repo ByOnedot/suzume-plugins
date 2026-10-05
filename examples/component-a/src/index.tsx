@@ -1,5 +1,5 @@
 import React from 'react';
-import { Statistic } from '@arco-design/web-react';
+import { Statistic } from '@byonedot/web-react';
 
 export function ComponentA() {
   return (

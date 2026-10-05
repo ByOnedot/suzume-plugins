@@ -1,8 +1,8 @@
-import { ArcoDesignPluginOptions } from './arco-design-plugin/interface';
+import { SuzumeDesignPluginOptions } from './suzume-design-plugin/interface';
 
 declare global {
-  interface arcoDesignPlugin {
-    options: ArcoDesignPluginOptions;
+  interface suzumeDesignPlugin {
+    options: SuzumeDesignPluginOptions;
   }
 }
 

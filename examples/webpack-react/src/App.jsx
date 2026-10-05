@@ -10,7 +10,7 @@ import {
   Switch,
   Rate,
   Empty,
-} from '@arco-design/web-react';
+} from '@byonedot/web-react';
 import { ComponentA } from 'example-component-a';
 import { MimeComponent } from '../components/mime-component/index.jsx';
 
@@ -20,7 +20,7 @@ function App() {
       <Space direction="vertical">
         <Button type="primary">Button</Button>
         <DatePicker />
-        <Avatar>Arco</Avatar>
+        <Avatar>Suzume</Avatar>
         <Input />
         <Tag>Tag</Tag>
         <Slider />

@@ -1,7 +1,7 @@
 <!--
   Thanks so much for your PR and contribution.
   
-  Before submitting, please make sure to follow the Pull Request Guidelines: https://github.com/arco-design/arco-design-pro/blob/master/CONTRIBUTING.md
+  Before submitting, please make sure to follow the Pull Request Guidelines: https://byonedot.in
 -->
 
 <!-- Put an `x` in "[ ]" to check a box) -->
